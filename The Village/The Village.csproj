@@ -78,8 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Exit.cs" />
     <Compile Include="Assets\GUI\Buttons.cs" />
     <Compile Include="Assets\Game.cs" />
+    <Compile Include="Assets\LoadLastGame.cs" />
+    <Compile Include="Assets\NewGame.cs" />
     <Compile Include="Assets\Scripts\MainGame.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
