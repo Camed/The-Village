@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewGame : MonoBehaviour
+public class SettingsButton : MonoBehaviour
 {
+
 	void Start ()
     {
-        Buttons.NewGame();
-    }
+        
+	}
+
+	void Update ()
+    {
+		
+	}
 }

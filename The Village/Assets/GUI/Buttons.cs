@@ -29,13 +29,7 @@ public static class Buttons
         int.TryParse(save[12], out defense); int.TryParse(save[13], out mp);
         int.TryParse(save[14], out mr);
 
-        Game g = new Game();
-        g.Load(wood, stone, money, water, food, tartak, kamieniolom, radaosady, zrodlo, farma, lvl, attack, defense, mp, mr);
-    }
-
-    public static void Settings()
-    {
-
+        Game.Load(wood, stone, money, water, food, tartak, kamieniolom, radaosady, zrodlo, farma, lvl, attack, defense, mp, mr);
     }
 
     public static void Exit()
