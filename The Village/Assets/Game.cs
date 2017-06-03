@@ -124,18 +124,23 @@ public class Game
     {
         woodIncome.Elapsed += new ElapsedEventHandler(this.woodCallback);
         woodIncome.Enabled = true;
+        woodIncome.Start();
 
         stoneIncome.Elapsed += new ElapsedEventHandler(this.stoneCallback);
         stoneIncome.Enabled = true;
+        stoneIncome.Start();
 
         goldIncome.Elapsed += new ElapsedEventHandler(this.goldCallback);
         goldIncome.Enabled = true;
+        goldIncome.Start();
 
         waterIncome.Elapsed += new ElapsedEventHandler(this.waterCallback);
         waterIncome.Enabled = true;
+        waterIncome.Start();
 
         foodIncome.Elapsed += new ElapsedEventHandler(this.foodCallback);
         foodIncome.Enabled = true;
+        foodIncome.Start();
     }
     public void Load(Hero h, int wood, int stone, int money, int water, int food,
                      int tartak, int kamieniolom, int radaosady, int zrodlo, int farma)

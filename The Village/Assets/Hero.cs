@@ -114,9 +114,18 @@ public class Hero
     }
     public void UseSpell(Monster m)
     {
-        if(spell == Spells.Charm)
+        if (spell == Spells.Charm)
         {
             Combat(m, Spells.Charm);
         }
+        else if (spell == Spells.DoubleStraightAngle)
+        {
+            Combat(m, Spells.DoubleStraightAngle);
+        }
+        else if (spell == Spells.Stun)
+        {
+            Combat(m, Spells.Stun);
+        }
+        else Combat(m, Spells.Espionage);
     }
 }
