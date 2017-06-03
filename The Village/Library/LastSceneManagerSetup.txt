@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/mlyn.unity
+- path: Assets/scena.unity
   isLoaded: 1
   isActive: 1

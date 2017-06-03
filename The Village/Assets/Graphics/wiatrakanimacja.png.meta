@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a600ec4b8313b85438d3f07e6e8686dd
-timeCreated: 1496512482
+timeCreated: 1496523210
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -45,7 +45,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -86,12 +86,12 @@ TextureImporter:
       name: wiatrakanimacja_0
       rect:
         serializedVersion: 2
-        x: 60
-        y: 133
-        width: 233
-        height: 278
+        x: 59
+        y: 141
+        width: 253
+        height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -99,25 +99,25 @@ TextureImporter:
       name: wiatrakanimacja_1
       rect:
         serializedVersion: 2
-        x: 365
-        y: 133
-        width: 220
-        height: 232
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        x: 355
+        y: 142
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5382589, y: 0.5293946}
+      border: {x: 0, y: 0, z: 0, w: 1}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: wiatrakanimacja_2
       rect:
         serializedVersion: 2
-        x: 633
-        y: 132
-        width: 222
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 62
+        y: 141
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5313696, y: 0.4941212}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -125,12 +125,25 @@ TextureImporter:
       name: wiatrakanimacja_3
       rect:
         serializedVersion: 2
-        x: 891
-        y: 132
-        width: 219
-        height: 239
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 732
+        y: 142
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5382589, y: 0.5293946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: wiatrakanimacja_4
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 141
+        width: 256
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5382589, y: 0.5293946}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
