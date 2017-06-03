@@ -12,7 +12,7 @@ public struct Costs
 
 public class Game
 {
-    public static int Drewno, Kamien, Zloto, Woda, Jedzenie, Tartak, Kamieniolom, RadaOsady, ZrodloWody, Farma, Level, Atak, Obrona, PunktyMagii, OdpornoscNaMagie;
+    public int Drewno, Kamien, Zloto, Woda, Jedzenie, Tartak, Kamieniolom, RadaOsady, ZrodloWody, Farma, Level, Atak, Obrona, PunktyMagii, OdpornoscNaMagie;
     public static string HeroName;
     private static System.Timers.Timer woodIncome = new System.Timers.Timer(10000);
     private static System.Timers.Timer stoneIncome = new System.Timers.Timer(10000);
@@ -77,7 +77,7 @@ public class Game
         if(!upgradeBuilding(ref Farma, c)) throw new System.Exception("Not enough materials!");
     }
 
-    private static bool upgradeBuilding(ref int building, Costs costs)
+    private bool upgradeBuilding(ref int building, Costs costs)
     {
         if (costs.woodCost <= Drewno &&  costs.stoneCost <= Kamien && costs.goldCost <= Zloto && costs.waterCost <= Woda && costs.foodCost <= Jedzenie)
         {

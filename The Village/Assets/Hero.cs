@@ -30,7 +30,7 @@ public class Hero
     public int Attack, Defense, MagicPower, MagicResist, Experience, Level;
     public string Name;
     public Spells spell;
-
+    private Random r = new Random();
     public Hero() { }
     public Hero(HeroBase hb)
     {
@@ -86,5 +86,37 @@ public class Hero
         else MagicResist++;
 
         if (Name == "Darius") Attack++;
+    }
+    public void Combat(Monster m)
+    {
+        m.TakeDamage(Attack);
+    }
+    public void Combat(Monster m, Spells s)
+    {
+        switch(s)
+        {
+            case Spells.Charm:
+                m.TakeDamage((Attack + MagicPower) * 2);
+                break;
+            case Spells.Stun:
+                m.stunTurns = 2;
+                m.TakeDamage(MagicPower);
+                break;
+            case Spells.DoubleStraightAngle:
+                m.TakeDamage(Attack * 3);
+                break;
+            case Spells.Espionage:
+                m.TakeDamage(MagicPower);
+                int x = r.Next(0, 10);
+                if (x == 0 || x == 1) m.isDead = true;
+                break;
+        }
+    }
+    public void UseSpell(Monster m)
+    {
+        if(spell == Spells.Charm)
+        {
+            Combat(m, Spells.Charm);
+        }
     }
 }

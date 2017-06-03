@@ -84,9 +84,10 @@
     <Compile Include="Assets\GUI\Buttons.cs" />
     <Compile Include="Assets\Game.cs" />
     <Compile Include="Assets\Hero.cs" />
+    <Compile Include="Assets\Images.cs" />
     <Compile Include="Assets\LoadLastGame.cs" />
+    <Compile Include="Assets\Monster.cs" />
     <Compile Include="Assets\NewGame.cs" />
-    <Compile Include="Assets\Scripts\MainGame.cs" />
     <Compile Include="Assets\Settings.cs" />
     <Compile Include="Assets\SettingsButton.cs" />
   </ItemGroup>
