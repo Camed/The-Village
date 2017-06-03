@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\mouseFollow.cs" />
     <Compile Include="Assets\Settings.cs" />
     <Compile Include="Assets\SettingsButton.cs" />
+    <Compile Include="Assets\kilof.cs" />
     <Compile Include="Assets\mouse.cs" />
     <Compile Include="Assets\mouseFollow.cs" />
     <Compile Include="Assets\spawn.cs" />
