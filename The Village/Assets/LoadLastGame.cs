@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadLastGame : MonoBehaviour {
-	void Start ()
+public class LoadLastGame : MonoBehaviour
+{
+    
+    public void FuncLoadLastGame()
     {
         Buttons.LoadLastGame();
+    }
+
+    void Start ()
+    {
+        
 	}
 }

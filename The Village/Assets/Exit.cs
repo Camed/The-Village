@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Exit : MonoBehaviour {
 
-	// Use this for initialization
-	void Start ()
+    public void ExitApp()
     {
         Buttons.Exit();
+    }
+
+	void Start ()
+    {
+        
 	}
 }

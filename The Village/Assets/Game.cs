@@ -10,10 +10,10 @@ public struct Costs
    public int woodCost, stoneCost, goldCost, waterCost, foodCost;
 }
 
-public static class Game
+public class Game
 {
     public static int Drewno, Kamien, Zloto, Woda, Jedzenie, Tartak, Kamieniolom, RadaOsady, ZrodloWody, Farma, Level, Atak, Obrona, PunktyMagii, OdpornoscNaMagie;
-
+    public static string HeroName;
     private static System.Timers.Timer woodIncome = new System.Timers.Timer(10000);
     private static System.Timers.Timer stoneIncome = new System.Timers.Timer(10000);
     private static System.Timers.Timer goldIncome = new System.Timers.Timer(10000);
@@ -21,7 +21,7 @@ public static class Game
     private static System.Timers.Timer foodIncome = new System.Timers.Timer(10000);
 
 
-    public static void UpgradeTartak  (int level)
+    public void UpgradeTartak  (int level)
     {
         Costs c = new Costs();
         c.woodCost = 3 * level;
@@ -32,7 +32,7 @@ public static class Game
 
         if(!upgradeBuilding(ref Tartak, c)) throw new System.Exception("Not enough materials!");
     }
-    public static void UpgradeKamien  (int level)
+    public void UpgradeKamien  (int level)
     {
         Costs c = new Costs();
         c.woodCost = 5 * level;
@@ -43,7 +43,7 @@ public static class Game
 
         if(!upgradeBuilding(ref Kamieniolom, c)) throw new System.Exception("Not enough materials!");
     }
-    public static void UpgradeGold    (int level)
+    public void UpgradeGold    (int level)
     {
         Costs c = new Costs();
         c.woodCost = 6 * level;
@@ -54,7 +54,7 @@ public static class Game
 
         if(!upgradeBuilding(ref RadaOsady, c)) throw new System.Exception("Not enough materials!");
     }
-    public static void UpgradeWoda    (int level)
+    public void UpgradeWoda    (int level)
     {
         Costs c = new Costs();
         c.woodCost = 4 * level;
@@ -65,7 +65,7 @@ public static class Game
 
         if(!upgradeBuilding(ref ZrodloWody, c)) throw new System.Exception("Not enough materials!");
     }
-    public static void UpgradeJedzenie(int level)
+    public void UpgradeJedzenie(int level)
     {
         Costs c = new Costs();
         c.woodCost = 5 * level;
@@ -92,55 +92,55 @@ public static class Game
         building += 1;
     }
 
-    private static void woodCallback(object o, ElapsedEventArgs e)
+    private void woodCallback(object o, ElapsedEventArgs e)
     {
         Drewno += Tartak;
     }
-    private static void stoneCallback(object o, ElapsedEventArgs e)
+    private void stoneCallback(object o, ElapsedEventArgs e)
     {
         Kamien += Kamieniolom;
     }
-    private static void goldCallback(object o, ElapsedEventArgs e)
+    private void goldCallback(object o, ElapsedEventArgs e)
     {
         Zloto += RadaOsady;
     }
-    private static void waterCallback(object o, ElapsedEventArgs e)
+    private void waterCallback(object o, ElapsedEventArgs e)
     {
         Woda += ZrodloWody;
     }
-    private static void foodCallback(object o, ElapsedEventArgs e)
+    private void foodCallback(object o, ElapsedEventArgs e)
     {
         Jedzenie += Farma;
     }
 
-	public static void Start(int wood = 5, int stone = 5, int money = 500, int water = 100, int food = 100, int tartak = 1,
-                      int kamieniolom = 1, int radaosady = 1, int zrodlo = 1, int farma = 1, int level = 1,
-                      int attack = 1, int defense = 1, int mp = 1, int mr = 1)
+	public void Start(Hero h, int wood = 5, int stone = 5, int money = 500, int water = 100, int food = 100, int tartak = 1,
+                      int kamieniolom = 1, int radaosady = 1, int zrodlo = 1, int farma = 1, int level = 1)
     {
         Kamien = stone; Zloto = money; Woda = water; Jedzenie = food; Tartak = tartak; Kamieniolom = kamieniolom; RadaOsady = radaosady;
-        ZrodloWody = zrodlo; Farma = farma; Level = level; Atak = attack; Obrona = defense; PunktyMagii = mp; OdpornoscNaMagie = mr; Drewno = wood;
+        ZrodloWody = zrodlo; Farma = farma; Level = level; Atak = h.Attack; Obrona = h.Defense; PunktyMagii = h.MagicPower;
+        OdpornoscNaMagie = h.MagicResist; Drewno = wood;
     } 
-    private static void Income()
+    private void Income()
     {
-        woodIncome.Elapsed += new ElapsedEventHandler(woodCallback);
+        woodIncome.Elapsed += new ElapsedEventHandler(this.woodCallback);
         woodIncome.Enabled = true;
 
-        stoneIncome.Elapsed += new ElapsedEventHandler(stoneCallback);
+        stoneIncome.Elapsed += new ElapsedEventHandler(this.stoneCallback);
         stoneIncome.Enabled = true;
 
-        goldIncome.Elapsed += new ElapsedEventHandler(goldCallback);
+        goldIncome.Elapsed += new ElapsedEventHandler(this.goldCallback);
         goldIncome.Enabled = true;
 
-        waterIncome.Elapsed += new ElapsedEventHandler(waterCallback);
+        waterIncome.Elapsed += new ElapsedEventHandler(this.waterCallback);
         waterIncome.Enabled = true;
 
-        foodIncome.Elapsed += new ElapsedEventHandler(foodCallback);
+        foodIncome.Elapsed += new ElapsedEventHandler(this.foodCallback);
         foodIncome.Enabled = true;
     }
-    public static void Load(int wood, int stone, int money, int water, int food, int tartak,
-                            int kamieniolom, int radaosady, int zrodlo, int farma, int level,
-                            int attack, int defense, int mp, int mr)
+    public void Load(Hero h, int wood, int stone, int money, int water, int food,
+                     int tartak, int kamieniolom, int radaosady, int zrodlo, int farma)
     {
-        Start(wood, stone, money, water, food, tartak, kamieniolom, radaosady, zrodlo, farma, level, attack, defense, mp, mr);
+
+        Start(h, wood, stone, money, water, food, tartak, kamieniolom, radaosady, zrodlo, farma);
     }
 }

@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class NewGame : MonoBehaviour
 {
-	void Start ()
+
+    public void StartNewGame()
     {
         Buttons.NewGame();
+    }
+
+	void Start ()
+    {
+        
     }
 }

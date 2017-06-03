@@ -14,7 +14,7 @@ public enum HeroBase
      */
 }
 
-class Hero
+public class Hero
 {
     /// <summary>
     /// Stun - enemy can't move 2 turns
@@ -22,52 +22,57 @@ class Hero
     /// DoubleStraigtAngle - special triangle falls of the sky that deal triple phisical damage
     /// Espionage - Embarasses your opponent, 20% probability of running out of the battle
     /// </summary>
-    private enum Spells
+    public enum Spells
     {
         Stun, Charm, DoubleStraightAngle, Espionage
     }
 
-    private int attack, defense, magicpower, magicresist, experience;
+    public int Attack, Defense, MagicPower, MagicResist, Experience, Level;
     public string Name;
-    private Spells spell;
+    public Spells spell;
 
+    public Hero() { }
     public Hero(HeroBase hb)
     {
         if(hb == HeroBase.Darius)
         {
-            attack = 3;
-            defense = 2;
-            magicpower = 1;
-            magicresist = 2;
-            experience = 0;
+            Attack = 3;
+            Defense = 2;
+            MagicPower = 1;
+            MagicResist = 2;
+            Experience = 0;
+            Level = 1;
             spell = Spells.Stun;
             Name = "Darius";
         }
         else if(hb == HeroBase.Wojtimus)
         {
-            attack = 4;
-            defense = 1;
-            magicpower = 2;
-            magicresist = 1;
-            experience = 0;
+            Attack = 4;
+            Defense = 1;
+            MagicPower = 2;
+            MagicResist = 1;
+            Experience = 0;
+            Level = 1;
             spell = Spells.Charm;
             Name = "Wojtimus";
         }
         else if(hb == HeroBase.Zuberus)
         {
-            attack = 1;
-            defense = 1;
-            magicpower = 3;
-            magicresist = 3;
+            Attack = 1;
+            Defense = 1;
+            MagicPower = 3;
+            MagicResist = 3;
+            Level = 1;
             spell = Spells.DoubleStraightAngle;
             Name = "Zuberus";   
         }
         else //Snailus
         {
-            attack = 2;
-            defense = 2;
-            magicpower = 2;
-            magicresist = 2;
+            Attack = 2;
+            Defense = 2;
+            MagicPower = 2;
+            MagicResist = 2;
+            Level = 1;
             spell = Spells.Espionage;
             Name = "Snailus";
         }
@@ -75,11 +80,11 @@ class Hero
 
     public void LevelUp(string ability)
     {
-        if (ability == "attack") attack++;
-        else if (ability == "defense") defense++;
-        else if (ability == "magicpower") magicpower++;
-        else magicresist++;
+        if (ability == "attack") Attack++;
+        else if (ability == "defense") Defense++;
+        else if (ability == "magicpower") MagicPower++;
+        else MagicResist++;
 
-        if (Name == "Darius") attack++;
+        if (Name == "Darius") Attack++;
     }
 }

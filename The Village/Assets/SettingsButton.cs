@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class SettingsButton : MonoBehaviour
 {
+    private static bool isVisible = false;
 
-	void Start ()
+    private void Show(bool b)
     {
-        
-	}
 
-	void Update ()
+    }
+
+    public void ShowSettings()
     {
-		
-	}
+        Show(isVisible);
+        isVisible = !isVisible;
+    }
 }
