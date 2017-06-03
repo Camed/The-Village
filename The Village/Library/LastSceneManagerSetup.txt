@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/ui.unity
+- path: Assets/kamieniolom.unity
   isLoaded: 1
   isActive: 1
