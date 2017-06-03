@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/scena.unity
+=======
+<<<<<<< HEAD
+- path: Assets/water.unity
+=======
+- path: Assets/mlyn.unity
+>>>>>>> 4d27af7826a59e8d13686ef4066cf2bfbbcc8019
+>>>>>>> bc761b46a1570ea1ba252339b4ead1c795540170
   isLoaded: 1
   isActive: 1
